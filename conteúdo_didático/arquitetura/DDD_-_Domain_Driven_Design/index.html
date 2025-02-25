@@ -1,0 +1,3394 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../monorepo/">
+      
+      
+        <link rel="next" href="contextos_delimitados/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>O que é DDD - Domain Driven Design - Next Gen 2025</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="../../../assets/mkdocs_puml/interaction.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#o-que-e-ddd-domain-driven-design" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Next Gen 2025" class="md-header__button md-logo" aria-label="Next Gen 2025" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Next Gen 2025
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              O que é DDD - Domain Driven Design
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Next Gen 2025" class="md-nav__button md-logo" aria-label="Next Gen 2025" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Next Gen 2025
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bem Vindo ao Bootcamp Next Gen 2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estrutura_bootcamp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estrutura do Bootcamp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Detalhamento das Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Conteúdo didático
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Conteúdo didático
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SOLID/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Princípios SOLID
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Arquitetura
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Arquitetura
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microservices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microservices: Abordagem no Projeto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monorepo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Monorepo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_3" id="__nav_4_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DDD   Domain Driven Design
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            DDD   Domain Driven Design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    O que é DDD - Domain Driven Design
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    O que é DDD - Domain Driven Design
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-dominio" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que é "Domínio"?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="O que é "Domínio"?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplos-de-dominios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplos de Domínios:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-que-o-dominio-e-importante" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que o Domínio é Importante?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentes-do-dominio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Componentes do Domínio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-sao-building-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que são Building Blocks?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="O que são Building Blocks?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-sao-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que são Importantes?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principais-building-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Building Blocks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entidades
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Entidades">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principais-caracteristicas-das-entidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Características das Entidades
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-entidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Entidade
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplo de Entidade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entidade-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entidade: Cliente
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vantagens-de-usar-entidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vantagens de Usar Entidades
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repository
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Repository">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principais-caracteristicas-do-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Características do Repositório
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Repositório
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplo de Repositório">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#repositorio-livrorepository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repositório: LivroRepository
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-comuns-em-repositorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operações Comuns em Repositórios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vantagens-de-usar-repositorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vantagens de Usar Repositórios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principais-caracteristicas-do-servico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Características do Serviço
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-servicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de Serviços
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-servico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Serviço
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplo de Serviço">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#servico-pedidoservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Serviço: PedidoService
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-comuns-em-servicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operações Comuns em Serviços
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vantagens-de-usar-servicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vantagens de Usar Serviços
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validator
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principais-caracteristicas-do-validador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Características do Validador
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-validador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de Validador
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-validador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Validador
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplo de Validador">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validador-produtovalidator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validador: ProdutoValidator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-comuns-em-validadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operações Comuns em Validadores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vantagens-de-usar-validadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vantagens de Usar Validadores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controller-mvc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controller (MVC)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Controller (MVC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principais-caracteristicas-do-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Características do Controller
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-tipica-de-um-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura Típica de um Controller
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Controller
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplo de Controller">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controller-produtocontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controller: ProdutoController
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-comuns-em-controllers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operações Comuns em Controllers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vantagens-de-usar-controllers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vantagens de Usar Controllers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ddd-e-mvc" class="md-nav__link">
+    <span class="md-ellipsis">
+      DDD e MVC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DDD e MVC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-que-e-mvc" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que é MVC?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ddd-e-agnostico-a-padroes-arquiteturais-e-organizacionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      DDD é Agnóstico a Padrões Arquiteturais e Organizacionais
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-ddd-e-mvc-se-encaixam" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como DDD e MVC se Encaixam
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplificando-a-interseccao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplificando a Intersecção
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contextos_delimitados/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    O que é Contexto Delimitado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_3_3" id="__nav_4_2_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exemplos Práticos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Exemplos Práticos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Exemplos_Pr%C3%A1ticos/ecommerce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E-Commerce
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ferramentas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ferramentas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ferramentas/coder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ferramentas/docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ferramentas/maven/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maven
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ferramentas/npm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NPM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ferramentas/python-poetry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python Poetry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Frameworks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Frameworks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frameworks/nextjs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Next.JS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frameworks/react/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    React
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frameworks/springboot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spring boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_4" id="__nav_4_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Microframeworks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Microframeworks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frameworks/microframeworks/express/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Express JS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frameworks/microframeworks/fastapi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FastAPI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Frontend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Frontend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../frontend/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frontend com NextJS e Material UI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Gateway
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Gateway
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gateway/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Api Gateway com Proxy Reverso e Upstream no NGINX
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Instalação ambiente
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Instalação ambiente
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instala%C3%A7%C3%A3o_ambiente/ubuntu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubuntu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instala%C3%A7%C3%A3o_ambiente/vscode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VSCode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instala%C3%A7%C3%A3o_ambiente/windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Java backend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Java backend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java_backend/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projeto Monorepo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Libs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Libs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2_1" id="__nav_8_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Security
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Security
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java_backend/libs/security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentação do Sistema de Segurança com JWT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Microservices
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Microservices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java_backend/microservices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Detalhamentos das bibliotecas usadas no projeto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3_2" id="__nav_8_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Feedbackrequest
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Feedbackrequest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java_backend/microservices/feedbackrequest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pedido de Feedback
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3_3" id="__nav_8_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Feedbackresponse
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Feedbackresponse
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java_backend/microservices/feedbackresponse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Respostas de Feedback
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3_4" id="__nav_8_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Usermanagement
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Usermanagement
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java_backend/microservices/usermanagement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestão de Usuários
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Node backend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Node backend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Api gateway
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            Api gateway
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../node_backend/api_gateway/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Api Gateway implementado com Node e Express
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python backend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Python backend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python_backend/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python Backend Com FastAPI e Peewee
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Feedbackresponseview
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Feedbackresponseview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python_backend/feedbackresponseview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visualização de Respostas de Feedback
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-dominio" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que é "Domínio"?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="O que é "Domínio"?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplos-de-dominios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplos de Domínios:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-que-o-dominio-e-importante" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que o Domínio é Importante?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentes-do-dominio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Componentes do Domínio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-sao-building-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que são Building Blocks?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="O que são Building Blocks?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-sao-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que são Importantes?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principais-building-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Building Blocks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entidades
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Entidades">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principais-caracteristicas-das-entidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Características das Entidades
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-entidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Entidade
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplo de Entidade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entidade-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entidade: Cliente
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vantagens-de-usar-entidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vantagens de Usar Entidades
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repository
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Repository">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principais-caracteristicas-do-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Características do Repositório
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Repositório
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplo de Repositório">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#repositorio-livrorepository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repositório: LivroRepository
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-comuns-em-repositorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operações Comuns em Repositórios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vantagens-de-usar-repositorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vantagens de Usar Repositórios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principais-caracteristicas-do-servico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Características do Serviço
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-servicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de Serviços
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-servico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Serviço
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplo de Serviço">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#servico-pedidoservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Serviço: PedidoService
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-comuns-em-servicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operações Comuns em Serviços
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vantagens-de-usar-servicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vantagens de Usar Serviços
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validator
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principais-caracteristicas-do-validador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Características do Validador
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-validador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de Validador
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-validador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Validador
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplo de Validador">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validador-produtovalidator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validador: ProdutoValidator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-comuns-em-validadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operações Comuns em Validadores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vantagens-de-usar-validadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vantagens de Usar Validadores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controller-mvc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controller (MVC)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Controller (MVC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principais-caracteristicas-do-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Características do Controller
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-tipica-de-um-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura Típica de um Controller
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Controller
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplo de Controller">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controller-produtocontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controller: ProdutoController
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operacoes-comuns-em-controllers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operações Comuns em Controllers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vantagens-de-usar-controllers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vantagens de Usar Controllers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ddd-e-mvc" class="md-nav__link">
+    <span class="md-ellipsis">
+      DDD e MVC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DDD e MVC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-que-e-mvc" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que é MVC?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ddd-e-agnostico-a-padroes-arquiteturais-e-organizacionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      DDD é Agnóstico a Padrões Arquiteturais e Organizacionais
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-ddd-e-mvc-se-encaixam" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como DDD e MVC se Encaixam
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplificando-a-interseccao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplificando a Intersecção
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="o-que-e-ddd-domain-driven-design">O que é DDD - Domain Driven Design</h1>
+<p><strong>Domain-Driven Design</strong> (Design Orientado ao Domínio) é um conjunto de princípios e práticas para desenvolver software de forma que ele reflita bem o mundo real do problema que está tentando resolver. É uma maneira de melhorar a comunicação entre desenvolvedores e pessoas que entendem o negócio, para que o software seja mais útil e fácil de entender.</p>
+<h2 id="o-que-e-dominio">O que é "Domínio"?</h2>
+<p><strong>Domínio</strong> se refere à área específica de conhecimento ou atividade sobre a qual você está construindo o software. Por exemplo, se você está criando um sistema para uma biblioteca, o domínio seria tudo relacionado a bibliotecas: livros, empréstimos, leitores, etc.</p>
+<h3 id="exemplos-de-dominios">Exemplos de Domínios:</h3>
+<ol>
+<li><strong>Biblioteca</strong>: Livros, leitores, empréstimos, devoluções.</li>
+<li><strong>E-commerce</strong>: Produtos, clientes, pedidos, pagamentos.</li>
+<li><strong>Saúde</strong>: Pacientes, médicos, tratamentos, consultas.</li>
+</ol>
+<h2 id="por-que-o-dominio-e-importante">Por que o Domínio é Importante?</h2>
+<ol>
+<li><strong>Entendimento</strong>: Conhecer bem o domínio ajuda a criar um software que realmente atende às necessidades dos usuários.</li>
+<li><strong>Comunicação</strong>: Facilita a conversa entre desenvolvedores e especialistas do negócio, pois todos usam a mesma linguagem.</li>
+<li><strong>Modelagem</strong>: Permite que você crie modelos que representam a realidade do domínio, ajudando a estruturar o software de maneira lógica.</li>
+</ol>
+<h2 id="componentes-do-dominio">Componentes do Domínio</h2>
+<ol>
+<li>
+<p><strong>Entidades</strong>: São objetos que têm uma identidade própria. Por exemplo, um livro ou um leitor em uma biblioteca.</p>
+</li>
+<li>
+<p><strong>Value Objects</strong>: Objetos que não têm identidade própria, mas têm atributos que definem seu valor. Por exemplo, uma data ou um endereço.</p>
+</li>
+<li>
+<p><strong>Agregados</strong>: Um grupo de entidades e Value Objects que são tratados como uma única unidade. Por exemplo, um pedido em um e-commerce pode incluir vários itens.</p>
+</li>
+<li>
+<p><strong>Repositórios</strong>: São responsáveis por recuperar e armazenar entidades e agregados.</p>
+</li>
+<li>
+<p><strong>Serviços</strong>: Lógica de negócio que não se encaixa em entidades ou Value Objects. Por exemplo, um serviço que calcula o valor total de um pedido.</p>
+</li>
+</ol>
+<p>Claro! Vamos explicar o que são <strong>building blocks</strong> (ou "blocos de construção") de forma simples.</p>
+<h2 id="o-que-sao-building-blocks">O que são Building Blocks?</h2>
+<p><strong>Building blocks</strong> são componentes fundamentais que ajudam a construir um sistema de software. Pense neles como peças de LEGO. Cada peça tem uma função específica e, quando unidas, elas formam algo maior e mais complexo.</p>
+<h3 id="por-que-sao-importantes">Por que são Importantes?</h3>
+<ol>
+<li>
+<p><strong>Estrutura</strong>: Os building blocks fornecem uma estrutura que facilita a organização do código. Isso torna mais fácil entender como o sistema funciona.</p>
+</li>
+<li>
+<p><strong>Reutilização</strong>: Você pode usar esses blocos em diferentes partes do seu sistema ou até mesmo em outros projetos. Isso economiza tempo e esforço.</p>
+</li>
+<li>
+<p><strong>Colaboração</strong>: Quando todos usam os mesmos building blocks, fica mais fácil para os desenvolvedores trabalharem juntos, pois eles têm uma compreensão comum do que cada bloco faz.</p>
+</li>
+</ol>
+<h2 id="principais-building-blocks">Principais Building Blocks</h2>
+<h2 id="entidades">Entidades</h2>
+<p>No contexto do Domain-Driven Design (DDD), <strong>Entidades</strong> são objetos que possuem uma identidade única e podem mudar ao longo do tempo. Elas são fundamentais na modelagem do domínio, pois representam objetos do mundo real que têm significado dentro do contexto do problema que estamos resolvendo.</p>
+<h3 id="principais-caracteristicas-das-entidades">Principais Características das Entidades</h3>
+<ol>
+<li><strong>Identidade Única</strong>:</li>
+<li>Cada Entidade possui uma identidade distinta que a torna única, mesmo que seus atributos (características) mudem ao longo do tempo.</li>
+<li>Essa identidade é geralmente representada por um identificador, como um número de ID ou um código.</li>
+</ol>
+<p><strong>Exemplo</strong>: Em um sistema de biblioteca, cada livro pode ter um ID único, como "Livro123", que o distingue de outros livros, mesmo que dois livros tenham o mesmo título.</p>
+<ol>
+<li><strong>Mudança de Estado</strong>:</li>
+<li>As Entidades podem ter seu estado alterado ao longo do tempo. Isso significa que suas propriedades e características podem mudar conforme as operações são realizadas.</li>
+</ol>
+<p><strong>Exemplo</strong>: Um cliente pode ter seu endereço atualizado. A identidade do cliente permanece a mesma, mas suas informações mudam.</p>
+<ol>
+<li><strong>Comportamento</strong>:</li>
+<li>Além de ter atributos, as Entidades também podem ter comportamentos, ou seja, métodos que definem ações que podem ser realizadas sobre elas.</li>
+</ol>
+<p><strong>Exemplo</strong>: Um objeto "Cliente" pode ter um método chamado <code>comprarProduto()</code>, que define como o cliente realiza uma compra.</p>
+<h3 id="exemplo-de-entidade">Exemplo de Entidade</h3>
+<p>Vamos usar um exemplo simples para ilustrar uma Entidade:</p>
+<h4 id="entidade-cliente">Entidade: Cliente</h4>
+<ul>
+<li><strong>Identidade</strong>: ID do Cliente (por exemplo, "Cliente001")</li>
+<li><strong>Atributos</strong>:</li>
+<li>Nome</li>
+<li>Endereço</li>
+<li>Email</li>
+<li><strong>Comportamentos</strong>:</li>
+<li><code>atualizarEndereco(novoEndereco)</code>: Método que permite ao cliente atualizar seu endereço.</li>
+<li><code>realizarCompra(produto)</code>: Método que permite ao cliente realizar uma compra.</li>
+</ul>
+<pre><code class="language-python">class Cliente:
+    def __init__(self, id, nome, endereco, email):
+        self.id = id          # Identidade única
+        self.nome = nome
+        self.endereco = endereco
+        self.email = email
+
+    def atualizarEndereco(self, novoEndereco):
+        self.endereco = novoEndereco  # Mudança de estado
+
+    def realizarCompra(self, produto):
+        # Lógica para realizar uma compra
+        pass
+</code></pre>
+<h3 id="vantagens-de-usar-entidades">Vantagens de Usar Entidades</h3>
+<ol>
+<li>
+<p><strong>Modelo Rico</strong>: As Entidades permitem que você crie um modelo rico e expressivo que reflete o domínio do problema.</p>
+</li>
+<li>
+<p><strong>Isolamento de Lógica</strong>: Ao encapsular dados e comportamentos dentro das Entidades, você mantém a lógica de negócio próxima aos dados que ela manipula.</p>
+</li>
+<li>
+<p><strong>Facilidade de Manutenção</strong>: Com as Entidades bem definidas, é mais fácil entender, testar e manter o código, além de facilitar a comunicação entre a equipe de desenvolvimento e as partes interessadas.</p>
+</li>
+</ol>
+<h2 id="repository">Repository</h2>
+<p>No contexto do Domain-Driven Design (DDD), um <strong>Repositório</strong> é um padrão que encapsula a lógica necessária para acessar os dados armazenados. Em outras palavras, um repositório atua como uma coleção de objetos de domínio, permitindo que você adicione, remova e recupere entidades sem se preocupar com os detalhes de como esses dados são armazenados ou recuperados.</p>
+<h3 id="principais-caracteristicas-do-repositorio">Principais Características do Repositório</h3>
+<ol>
+<li><strong>Abstração do Armazenamento</strong>:</li>
+<li>
+<p>O repositório oculta os detalhes da persistência dos dados, como bancos de dados, arquivos ou serviços externos. Isso permite que você trabalhe com objetos de domínio sem se preocupar com como eles são armazenados.</p>
+</li>
+<li>
+<p><strong>Interface Clara</strong>:</p>
+</li>
+<li>
+<p>Um repositório fornece uma interface clara para realizar operações comuns, como adicionar, remover e buscar entidades. Isso promove uma separação de preocupações e facilita a manutenção e o teste do código.</p>
+</li>
+<li>
+<p><strong>Foco em Objetos de Domínio</strong>:</p>
+</li>
+<li>O repositório lida exclusivamente com objetos de domínio, como entidades e agregados. Ele não deve conter lógica de negócio; essa lógica deve permanecer nas entidades ou serviços.</li>
+</ol>
+<h3 id="exemplo-de-repositorio">Exemplo de Repositório</h3>
+<p>Vamos usar um exemplo para ilustrar como um repositório funciona em um sistema simples, como uma biblioteca.</p>
+<h4 id="repositorio-livrorepository">Repositório: LivroRepository</h4>
+<pre><code class="language-python">class Livro:
+    def __init__(self, id, titulo, autor):
+        self.id = id
+        self.titulo = titulo
+        self.autor = autor
+
+class LivroRepository:
+    def __init__(self):
+        self.livros = []  # Simulando um armazenamento em memória
+
+    def adicionar(self, livro):
+        self.livros.append(livro)  # Adiciona um livro ao repositório
+
+    def remover(self, livro):
+        self.livros.remove(livro)  # Remove um livro do repositório
+
+    def buscar_por_id(self, id):
+        for livro in self.livros:
+            if livro.id == id:
+                return livro  # Retorna o livro com o ID especificado
+        return None  # Se não encontrado
+
+    def listar_todos(self):
+        return self.livros  # Retorna todos os livros
+</code></pre>
+<h3 id="operacoes-comuns-em-repositorios">Operações Comuns em Repositórios</h3>
+<ol>
+<li><strong>Adicionar</strong>: Método para adicionar uma nova entidade ao repositório.</li>
+<li><strong>Remover</strong>: Método para remover uma entidade existente do repositório.</li>
+<li><strong>Buscar</strong>: Métodos para recuperar entidades com base em critérios específicos (por exemplo, por ID ou por atributos).</li>
+<li><strong>Listar</strong>: Método para listar todas as entidades armazenadas no repositório.</li>
+</ol>
+<h3 id="vantagens-de-usar-repositorios">Vantagens de Usar Repositórios</h3>
+<ol>
+<li>
+<p><strong>Separação de Preocupações</strong>: Ao separar a lógica de acesso a dados da lógica de negócio, você torna o sistema mais modular e fácil de manter.</p>
+</li>
+<li>
+<p><strong>Facilidade de Testes</strong>: Os repositórios podem ser facilmente simulados (mocked) em testes, permitindo que você teste a lógica de negócios sem depender de um banco de dados real.</p>
+</li>
+<li>
+<p><strong>Flexibilidade</strong>: Se você decidir mudar a forma como os dados são armazenados (por exemplo, mudar de um banco de dados SQL para um NoSQL), você pode fazer isso alterando apenas o repositório, sem afetar o restante do código.</p>
+</li>
+</ol>
+<h2 id="service">Service</h2>
+<p>No contexto do Domain-Driven Design (DDD), um <strong>Serviço</strong> é uma classe ou um componente que encapsula lógica de negócio que não se encaixa bem em uma única Entidade ou Value Object. Os serviços podem ser utilizados para realizar operações mais complexas que envolvem múltiplas entidades ou que não pertencem diretamente a uma entidade específica.</p>
+<h3 id="principais-caracteristicas-do-servico">Principais Características do Serviço</h3>
+<ol>
+<li><strong>Lógica de Negócio</strong>:</li>
+<li>
+<p>Os serviços contêm regras de negócio e operações que são relevantes para o domínio, mas que não são diretamente representadas por uma entidade.</p>
+</li>
+<li>
+<p><strong>Sem Estado Persistente</strong>:</p>
+</li>
+<li>
+<p>Diferente das entidades, os serviços geralmente não mantêm estado. Eles podem ser considerados "semelhantes a funções" que realizam tarefas e retornam resultados.</p>
+</li>
+<li>
+<p><strong>Interação entre Entidades</strong>:</p>
+</li>
+<li>Serviços podem coordenar operações que envolvem múltiplas entidades, facilitando a interação entre elas.</li>
+</ol>
+<h3 id="tipos-de-servicos">Tipos de Serviços</h3>
+<ol>
+<li><strong>Serviços de Domínio</strong>: </li>
+<li>
+<p>Contêm lógica de negócio específica do domínio e podem operar sobre entidades e Value Objects. Geralmente, eles são usados para encapsular operações que envolvem regras de negócio complexas.</p>
+</li>
+<li>
+<p><strong>Serviços de Aplicação</strong>:</p>
+</li>
+<li>Gerenciam a lógica de aplicação e orquestram o fluxo de dados entre a interface do usuário, serviços de domínio e repositórios. Eles são responsáveis por operações que não fazem parte diretamente do modelo de domínio, mas que são necessárias para a aplicação.</li>
+</ol>
+<h3 id="exemplo-de-servico">Exemplo de Serviço</h3>
+<p>Vamos usar um exemplo simples para ilustrar como um serviço funciona em um sistema de e-commerce.</p>
+<h4 id="servico-pedidoservice">Serviço: PedidoService</h4>
+<pre><code class="language-python">class Produto:
+    def __init__(self, id, nome, preco):
+        self.id = id
+        self.nome = nome
+        self.preco = preco
+
+class Pedido:
+    def __init__(self, cliente_id):
+        self.cliente_id = cliente_id
+        self.itens = []
+
+    def adicionar_item(self, produto):
+        self.itens.append(produto)  # Adiciona um produto ao pedido
+
+class PedidoService:
+    def __init__(self, pedido_repository):
+        self.pedido_repository = pedido_repository
+
+    def criar_pedido(self, cliente_id, produtos):
+        pedido = Pedido(cliente_id)
+        for produto in produtos:
+            pedido.adicionar_item(produto)  # Adiciona produtos ao pedido
+        self.pedido_repository.adicionar(pedido)  # Salva o pedido no repositório
+        return pedido
+</code></pre>
+<h3 id="operacoes-comuns-em-servicos">Operações Comuns em Serviços</h3>
+<ol>
+<li><strong>Criar</strong>: Métodos para criar novas entidades ou agregados, muitas vezes utilizando repositórios.</li>
+<li><strong>Atualizar</strong>: Métodos para atualizar o estado de entidades, podendo envolver lógica de validação.</li>
+<li><strong>Executar Processos de Negócio</strong>: Métodos que realizam operações complexas que podem envolver múltiplas entidades ou interações.</li>
+</ol>
+<h3 id="vantagens-de-usar-servicos">Vantagens de Usar Serviços</h3>
+<ol>
+<li>
+<p><strong>Organização do Código</strong>: Ao encapsular lógica de negócio complexa em serviços, você mantém o código mais organizado e mais fácil de entender.</p>
+</li>
+<li>
+<p><strong>Reutilização</strong>: Serviços podem ser reutilizados em diferentes partes da aplicação, promovendo a eficiência.</p>
+</li>
+<li>
+<p><strong>Facilidade de Testes</strong>: Os serviços podem ser facilmente testados isoladamente, o que facilita a criação de testes automatizados.</p>
+</li>
+</ol>
+<h2 id="validator">Validator</h2>
+<p>No contexto do Domain-Driven Design (DDD), um <strong>Validador</strong> é um componente responsável por garantir que os dados e as regras de negócio atendam a critérios específicos antes de serem processados ou armazenados. O validador atua como uma camada de proteção que verifica a integridade e a validade dos dados antes que eles sejam utilizados nas operações de negócio.</p>
+<h3 id="principais-caracteristicas-do-validador">Principais Características do Validador</h3>
+<ol>
+<li><strong>Verificação de Regras de Negócio</strong>:</li>
+<li>
+<p>O validador é encarregado de verificar se os dados atendem às regras de negócio definidas. Isso inclui checar se os dados estão completos, são coerentes e seguem as regras estabelecidas.</p>
+</li>
+<li>
+<p><strong>Separação de Preocupações</strong>:</p>
+</li>
+<li>
+<p>A utilização de validadores ajuda a separar a lógica de validação da lógica de negócio. Isso resulta em um código mais modular e fácil de manter.</p>
+</li>
+<li>
+<p><strong>Reutilização</strong>:</p>
+</li>
+<li>Validadores podem ser reutilizados em diferentes partes da aplicação sempre que for necessário validar dados semelhantes, promovendo assim a consistência.</li>
+</ol>
+<h3 id="tipos-de-validador">Tipos de Validador</h3>
+<ol>
+<li><strong>Validador de Entidade</strong>:</li>
+<li>
+<p>Realiza a validação dos atributos de uma entidade antes de ser persistida. Isso pode incluir checar se todos os campos obrigatórios estão preenchidos e se os dados estão no formato correto.</p>
+</li>
+<li>
+<p><strong>Validador de Comando</strong>:</p>
+</li>
+<li>
+<p>Utilizado para validar dados de entrada recebidos de uma interface, como formulários ou APIs. Garante que os dados que chegam ao sistema estejam corretos e prontos para serem processados.</p>
+</li>
+<li>
+<p><strong>Validador de Regras de Negócio</strong>:</p>
+</li>
+<li>Valida regras específicas que não são necessariamente relacionadas a atributos de entidades, mas que fazem parte da lógica de negócio. Por exemplo, validar se um cliente tem saldo suficiente para realizar uma compra.</li>
+</ol>
+<h3 id="exemplo-de-validador">Exemplo de Validador</h3>
+<p>Vamos usar um exemplo para ilustrar como um validador funciona em um sistema de e-commerce.</p>
+<h4 id="validador-produtovalidator">Validador: ProdutoValidator</h4>
+<pre><code class="language-python">class Produto:
+    def __init__(self, id, nome, preco):
+        self.id = id
+        self.nome = nome
+        self.preco = preco
+
+class ProdutoValidator:
+    def validar(self, produto):
+        erros = []
+
+        if not produto.nome:
+            erros.append(&quot;O nome do produto é obrigatório.&quot;)
+        if produto.preco &lt;= 0:
+            erros.append(&quot;O preço do produto deve ser maior que zero.&quot;)
+
+        if erros:
+            raise ValueError(&quot;Erros de validação: &quot; + &quot;; &quot;.join(erros))
+
+# Uso
+produto = Produto(1, &quot;&quot;, -10)  # Produto com dados inválidos
+validator = ProdutoValidator()
+
+try:
+    validator.validar(produto)  # Valida o produto
+except ValueError as e:
+    print(e)  # Captura e exibe os erros de validação
+</code></pre>
+<h3 id="operacoes-comuns-em-validadores">Operações Comuns em Validadores</h3>
+<ol>
+<li><strong>Validar Dados</strong>: Métodos que realizam a verificação dos dados com base nas regras de negócio.</li>
+<li><strong>Retornar Erros</strong>: Quando a validação falha, o validador deve retornar uma lista de erros ou lançar exceções que descrevem o que está errado.</li>
+</ol>
+<h3 id="vantagens-de-usar-validadores">Vantagens de Usar Validadores</h3>
+<ol>
+<li>
+<p><strong>Consistência</strong>: A aplicação de validadores garante que os dados que entram no sistema sejam consistentes e válidos, reduzindo a chance de erros em operações subsequentes.</p>
+</li>
+<li>
+<p><strong>Manutenção</strong>: Com a lógica de validação separada, é mais fácil modificar ou adicionar regras de validação sem impactar outras partes do sistema.</p>
+</li>
+<li>
+<p><strong>Clareza</strong>: A utilização de validadores torna o código mais claro e fácil de entender, pois as regras de validação são explicitamente definidas.</p>
+</li>
+</ol>
+<h2 id="controller-mvc">Controller (MVC)</h2>
+<p>No contexto do desenvolvimento de software, especialmente em aplicações web, um <strong>Controller</strong> é um componente que atua como intermediário entre a interface do usuário (UI) e a lógica de negócio da aplicação. Ele é responsável por gerenciar as requisições do usuário, processar essas requisições, interagir com os serviços e retornar as respostas apropriadas.</p>
+<h3 id="principais-caracteristicas-do-controller">Principais Características do Controller</h3>
+<ol>
+<li><strong>Gerenciamento de Requisições</strong>:</li>
+<li>
+<p>O controller é responsável por receber e processar as requisições feitas pelos usuários, normalmente através de um navegador ou aplicativo cliente. Isso inclui a análise dos dados de entrada e a execução das ações necessárias.</p>
+</li>
+<li>
+<p><strong>Interação com Serviços</strong>:</p>
+</li>
+<li>
+<p>Um controller geralmente interage com serviços de domínio ou de aplicação para realizar operações de negócio. Ele não deve conter lógica de negócio complexa, mas sim delegar essa responsabilidade aos serviços.</p>
+</li>
+<li>
+<p><strong>Retorno de Respostas</strong>:</p>
+</li>
+<li>Após processar a requisição, o controller prepara a resposta para ser enviada de volta ao usuário. Isso pode incluir a renderização de uma página, o retorno de dados em formato JSON, ou redirecionamentos para outras páginas.</li>
+</ol>
+<h3 id="estrutura-tipica-de-um-controller">Estrutura Típica de um Controller</h3>
+<p>Um controller geralmente contém métodos que correspondem a ações que podem ser realizadas na aplicação, como criar, ler, atualizar e excluir (CRUD). Cada um desses métodos manipula uma requisição específica.</p>
+<h3 id="exemplo-de-controller">Exemplo de Controller</h3>
+<p>Vamos usar um exemplo simples para ilustrar como um controller funciona em um sistema de e-commerce.</p>
+<h4 id="controller-produtocontroller">Controller: ProdutoController</h4>
+<pre><code class="language-python">class ProdutoService:
+    def criar_produto(self, nome, preco):
+        # Lógica para criar um produto
+        pass
+
+    def listar_produtos(self):
+        # Lógica para listar produtos
+        return []
+
+class ProdutoController:
+    def __init__(self, produto_service):
+        self.produto_service = produto_service
+
+    def adicionar_produto(self, nome, preco):
+        try:
+            self.produto_service.criar_produto(nome, preco)
+            return &quot;Produto adicionado com sucesso!&quot;
+        except Exception as e:
+            return f&quot;Erro ao adicionar produto: {str(e)}&quot;
+
+    def listar_produtos(self):
+        produtos = self.produto_service.listar_produtos()
+        return produtos  # Retorna a lista de produtos
+
+# Uso
+produto_service = ProdutoService()
+controller = ProdutoController(produto_service)
+
+# Adicionando um produto
+resultado_adicao = controller.adicionar_produto(&quot;Produto A&quot;, 100)
+print(resultado_adicao)
+
+# Listando produtos
+produtos = controller.listar_produtos()
+print(produtos)
+</code></pre>
+<h3 id="operacoes-comuns-em-controllers">Operações Comuns em Controllers</h3>
+<ol>
+<li><strong>Adicionar</strong>: Método para processar requisições de criação de novos recursos (por exemplo, um novo produto).</li>
+<li><strong>Listar</strong>: Método para retornar uma lista de recursos existentes.</li>
+<li><strong>Atualizar</strong>: Método para manipular requisições de atualização de recursos existentes.</li>
+<li><strong>Remover</strong>: Método para processar requisições de exclusão de recursos.</li>
+</ol>
+<h3 id="vantagens-de-usar-controllers">Vantagens de Usar Controllers</h3>
+<ol>
+<li>
+<p><strong>Separação de Preocupações</strong>: A utilização de controllers permite separar a lógica de apresentação (interface do usuário) da lógica de negócio, resultando em um código mais organizado e fácil de manter.</p>
+</li>
+<li>
+<p><strong>Facilidade de Testes</strong>: Controllers podem ser testados isoladamente, garantindo que a manipulação de requisições e respostas ocorra corretamente.</p>
+</li>
+<li>
+<p><strong>Clareza</strong>: Com a definição clara de métodos que correspondem a ações específicas, o código do controller se torna mais fácil de entender e seguir.</p>
+</li>
+</ol>
+<h2 id="ddd-e-mvc">DDD e MVC</h2>
+<h3 id="o-que-e-mvc">O que é MVC?</h3>
+<p><strong>Model-View-Controller (MVC)</strong> é um padrão arquitetural que divide uma aplicação em três componentes principais:</p>
+<ol>
+<li><strong>Model (Modelo)</strong>: Representa os dados e a lógica de negócio.</li>
+<li><strong>View (Visão)</strong>: A interface do usuário que exibe dados e recebe entradas do usuário.</li>
+<li><strong>Controller (Controlador)</strong>: Intermediário entre a View e o Model, processando as requisições do usuário e manipulando os dados.</li>
+</ol>
+<h3 id="ddd-e-agnostico-a-padroes-arquiteturais-e-organizacionais">DDD é Agnóstico a Padrões Arquiteturais e Organizacionais</h3>
+<ol>
+<li><strong>Independência de Padrões</strong>:</li>
+<li>
+<p>O DDD não prescreve uma arquitetura específica ou um padrão organizacional. Ele é agnóstico em relação a como o código deve ser estruturado. Isso significa que você pode aplicar os princípios do DDD em diversas arquiteturas, como MVC, Microservices, Clean Architecture, entre outras.</p>
+</li>
+<li>
+<p><strong>Flexibilidade</strong>:</p>
+</li>
+<li>A estrutura do DDD pode ser adaptada para se integrar com diferentes padrões, dependendo das necessidades do projeto e das preferências da equipe de desenvolvimento. Isso permite que os desenvolvedores escolham a melhor abordagem para o contexto em que estão trabalhando.</li>
+</ol>
+<h3 id="como-ddd-e-mvc-se-encaixam">Como DDD e MVC se Encaixam</h3>
+<ol>
+<li><strong>Model (Modelo) e Entidades</strong>:</li>
+<li>No MVC, o Model é responsável por representar dados e lógica de negócio. No DDD, as entidades e Value Objects formam a base do modelo. Portanto, o Model no MVC pode ser uma implementação direta dos conceitos do DDD. </li>
+<li>
+<p>As regras de negócio e validações definidas no DDD são refletidas nas entidades que compõem o Model.</p>
+</li>
+<li>
+<p><strong>Controller (Controlador) e Serviços</strong>:</p>
+</li>
+<li>O Controller no MVC atua como intermediário, recebendo as entradas do usuário e interagindo com o Model. No DDD, os serviços de domínio são utilizados dentro dos controllers para encapsular a lógica de negócio. Isso permite que o controller delegue as operações complexas a serviços, mantendo o código limpo e organizado.</li>
+<li>
+<p>O controller pode chamar métodos dos serviços de domínio para realizar operações, como criar ou atualizar entidades.</p>
+</li>
+<li>
+<p><strong>View (Visão) e Apresentação</strong>:</p>
+</li>
+<li>A View no MVC é responsável por exibir dados para o usuário. A apresentação dos dados pode ser influenciada pela modelagem do domínio feita no DDD. Isso significa que a estrutura e o comportamento da View podem ser moldados pelos conceitos do domínio, garantindo que a interface do usuário esteja alinhada com as regras e necessidades do negócio.</li>
+</ol>
+<h3 id="exemplificando-a-interseccao">Exemplificando a Intersecção</h3>
+<ul>
+<li><strong>Modelo</strong>:</li>
+<li>
+<p>Uma classe <code>Produto</code> que representa um produto pode ser tanto uma entidade no DDD quanto parte do Model no MVC. Essa classe incluiria atributos e métodos que refletem as regras de negócio.</p>
+</li>
+<li>
+<p><strong>Controlador</strong>:</p>
+</li>
+<li>
+<p>Um <code>ProdutoController</code> no MVC interage com um <code>ProdutoService</code> do DDD. O controlador processa requisições de criação ou atualização de produtos, utilizando os serviços de domínio para aplicar a lógica de negócio necessária.</p>
+</li>
+<li>
+<p><strong>Visão</strong>:</p>
+</li>
+<li>A interface do usuário que exibe a lista de produtos ou um formulário para adicionar novos produtos é a View no MVC, que se beneficia da modelagem de domínio feita no DDD.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../../assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="../../../assets/mkdocs_puml/interaction.js"></script>
+      
+    
+  </body>
+</html>

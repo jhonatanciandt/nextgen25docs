@@ -1,0 +1,2506 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../react/">
+      
+      
+        <link rel="next" href="../microframeworks/express/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>Spring boot - Next Gen 2025</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="../../../assets/mkdocs_puml/interaction.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#spring-boot" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Next Gen 2025" class="md-header__button md-logo" aria-label="Next Gen 2025" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Next Gen 2025
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Spring boot
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Next Gen 2025" class="md-nav__button md-logo" aria-label="Next Gen 2025" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Next Gen 2025
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bem Vindo ao Bootcamp Next Gen 2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../estrutura_bootcamp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estrutura do Bootcamp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Detalhamento das Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Conteúdo didático
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Conteúdo didático
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SOLID/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Princípios SOLID
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Arquitetura
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Arquitetura
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arquitetura/microservices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microservices: Abordagem no Projeto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arquitetura/monorepo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Monorepo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_3" id="__nav_4_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DDD   Domain Driven Design
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            DDD   Domain Driven Design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arquitetura/DDD_-_Domain_Driven_Design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    O que é DDD - Domain Driven Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arquitetura/DDD_-_Domain_Driven_Design/contextos_delimitados/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    O que é Contexto Delimitado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_3_3" id="__nav_4_2_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exemplos Práticos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Exemplos Práticos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arquitetura/DDD_-_Domain_Driven_Design/Exemplos_Pr%C3%A1ticos/ecommerce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E-Commerce
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ferramentas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ferramentas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ferramentas/coder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ferramentas/docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ferramentas/maven/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maven
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ferramentas/npm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NPM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ferramentas/python-poetry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python Poetry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Frameworks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Frameworks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nextjs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Next.JS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../react/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    React
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Spring boot
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Spring boot
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#filosofia-do-spring-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filosofia do Spring Boot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principais-caracteristicas-do-spring-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Características do Spring Boot:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beans
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Beans">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-dos-beans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características dos Beans
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-definir-um-bean" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como Definir um Bean
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ciclo-de-vida-de-um-bean" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ciclo de Vida de um Bean
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-ciclo-de-vida-de-um-bean" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Ciclo de Vida de um Bean
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-de-beans-na-aplicacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso de Beans na Aplicação
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-o-spring-boot-nos-ajuda-com-as-abordagens-desejadas-para-o-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como o Spring Boot nos ajuda com as abordagens desejadas para o projeto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Como o Spring Boot nos ajuda com as abordagens desejadas para o projeto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principios-solid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Princípios SOLID
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teoria-de-operacao-do-spring-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teoria de Operação do Spring Boot
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teoria de Operação do Spring Boot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ciclo-de-vida-da-aplicacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ciclo de Vida da Aplicação
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programacao-orientada-a-aspectos-aop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programação Orientada a Aspectos (AOP)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Programação Orientada a Aspectos (AOP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-que-e-aop" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que é AOP?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-o-spring-abraca-aop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como o Spring Abraça AOP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-aop-no-spring-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de AOP no Spring Boot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-de-aop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso de AOP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_4" id="__nav_4_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Microframeworks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Microframeworks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microframeworks/express/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Express JS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microframeworks/fastapi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FastAPI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Frontend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Frontend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../frontend/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frontend com NextJS e Material UI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Gateway
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Gateway
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gateway/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Api Gateway com Proxy Reverso e Upstream no NGINX
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Instalação ambiente
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Instalação ambiente
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instala%C3%A7%C3%A3o_ambiente/ubuntu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubuntu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instala%C3%A7%C3%A3o_ambiente/vscode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VSCode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instala%C3%A7%C3%A3o_ambiente/windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Java backend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Java backend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java_backend/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projeto Monorepo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Libs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Libs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2_1" id="__nav_8_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Security
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Security
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java_backend/libs/security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentação do Sistema de Segurança com JWT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Microservices
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Microservices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java_backend/microservices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Detalhamentos das bibliotecas usadas no projeto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3_2" id="__nav_8_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Feedbackrequest
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Feedbackrequest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java_backend/microservices/feedbackrequest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pedido de Feedback
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3_3" id="__nav_8_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Feedbackresponse
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Feedbackresponse
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java_backend/microservices/feedbackresponse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Respostas de Feedback
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3_4" id="__nav_8_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Usermanagement
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Usermanagement
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java_backend/microservices/usermanagement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestão de Usuários
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Node backend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Node backend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Api gateway
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            Api gateway
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../node_backend/api_gateway/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Api Gateway implementado com Node e Express
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python backend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Python backend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python_backend/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python Backend Com FastAPI e Peewee
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Feedbackresponseview
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Feedbackresponseview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python_backend/feedbackresponseview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visualização de Respostas de Feedback
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#filosofia-do-spring-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filosofia do Spring Boot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principais-caracteristicas-do-spring-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Características do Spring Boot:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beans
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Beans">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-dos-beans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características dos Beans
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-definir-um-bean" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como Definir um Bean
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ciclo-de-vida-de-um-bean" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ciclo de Vida de um Bean
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-ciclo-de-vida-de-um-bean" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Ciclo de Vida de um Bean
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-de-beans-na-aplicacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso de Beans na Aplicação
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-o-spring-boot-nos-ajuda-com-as-abordagens-desejadas-para-o-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como o Spring Boot nos ajuda com as abordagens desejadas para o projeto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Como o Spring Boot nos ajuda com as abordagens desejadas para o projeto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principios-solid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Princípios SOLID
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teoria-de-operacao-do-spring-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teoria de Operação do Spring Boot
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teoria de Operação do Spring Boot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ciclo-de-vida-da-aplicacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ciclo de Vida da Aplicação
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programacao-orientada-a-aspectos-aop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programação Orientada a Aspectos (AOP)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Programação Orientada a Aspectos (AOP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-que-e-aop" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que é AOP?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-o-spring-abraca-aop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como o Spring Abraça AOP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-aop-no-spring-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de AOP no Spring Boot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-de-aop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso de AOP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="spring-boot">Spring boot</h1>
+<p>O Spring Boot é um framework baseado no ecossistema Spring, que visa simplificar o desenvolvimento de aplicações Java. Sua filosofia é proporcionar uma experiência de desenvolvimento rápida, produtiva e de fácil configuração, permitindo que os desenvolvedores se concentrem nas funcionalidades do software, em vez de se preocupar com a configuração de infraestrutura.</p>
+<h2 id="filosofia-do-spring-boot">Filosofia do Spring Boot</h2>
+<p>O Spring Boot se destaca por sua filosofia de facilitar o desenvolvimento de aplicações Java, aderindo a práticas recomendadas como DDD e SOLID. Além disso, sua abordagem de configuração automática e suporte a AOP tornam o desenvolvimento mais eficiente e organizado. Isso permite que os desenvolvedores se concentrem nas características específicas do domínio e no design da aplicação, ao invés de se perderem em detalhes de configuração e infraestrutura. Além disso, o conceito de beans permite uma gestão eficiente e flexível dos componentes da aplicação.</p>
+<h2 id="principais-caracteristicas-do-spring-boot">Principais Características do Spring Boot:</h2>
+<ul>
+<li><strong>Configuração Automática:</strong> O Spring Boot automaticamente configura a aplicação com base nas dependências que você adiciona, reduzindo a necessidade de configuração manual.</li>
+<li><strong>Standalone:</strong> As aplicações Spring Boot podem ser executadas como aplicações Java independentes, sem a necessidade de um servidor de aplicativos externo, pois incluem um servidor embutido (como Tomcat).</li>
+<li><strong>Pronto para Produção:</strong> Inclui recursos de monitoramento e gerenciamento prontos para produção, como métricas e health checks.</li>
+</ul>
+<h2 id="beans">Beans</h2>
+<p>Um <strong>bean</strong> é um objeto que é instanciado, configurado e gerenciado pelo contêiner de Injeção de Dependência (IoC) do Spring Framework. A definição de um bean é fundamental para a forma como o Spring Boot lida com a configuração e a gestão de objetos em uma aplicação.</p>
+<h3 id="caracteristicas-dos-beans">Características dos Beans</h3>
+<ol>
+<li><strong>Instância Gerenciada:</strong> O Spring se encarrega de criar e gerenciar o ciclo de vida dos beans.</li>
+<li><strong>Configuração:</strong> Beans podem ser configurados através de anotações ou arquivos de configuração XML.</li>
+<li><strong>Injeção de Dependência:</strong> O Spring permite que os beans sejam injetados em outros beans, facilitando a construção de aplicações desacopladas.</li>
+<li><strong>Escopo:</strong> Beans podem ter diferentes escopos, como singleton (uma única instância por contêiner) ou prototype (uma nova instância a cada solicitação).</li>
+</ol>
+<h3 id="como-definir-um-bean">Como Definir um Bean</h3>
+<p>Existem diversas maneiras de definir um bean no Spring:</p>
+<ol>
+<li><strong>Usando Anotações:</strong></li>
+<li><code>@Component</code>: Indica que a classe é um bean genérico.</li>
+<li><code>@Service</code>: Usada para classes de serviço.</li>
+<li><code>@Repository</code>: Usada para classes de acesso a dados.</li>
+<li><code>@Controller</code>: Usada para classes de controle em aplicações web.</li>
+</ol>
+<p><strong>Exemplo:</strong></p>
+<pre><code class="language-java">import org.springframework.stereotype.Component;
+
+@Component
+public class MyBean {
+    public void doSomething() {
+        System.out.println(&quot;Fazendo algo!&quot;);
+    }
+}
+</code></pre>
+<ol>
+<li><strong>Usando o Método de Fábrica:</strong></li>
+<li>Você também pode definir um bean em um método que retorna uma instância do objeto desejado, anotando o método com <code>@Bean</code>.</li>
+</ol>
+<p><strong>Exemplo:</strong></p>
+<pre><code class="language-java">import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class MyConfig {
+    @Bean
+    public MyBean myBean() {
+        return new MyBean();
+    }
+}
+</code></pre>
+<h3 id="ciclo-de-vida-de-um-bean">Ciclo de Vida de um Bean</h3>
+<p>O ciclo de vida de um bean gerenciado pelo Spring pode ser dividido nas seguintes etapas:</p>
+<ol>
+<li><strong>Instanciação:</strong> O Spring cria uma nova instância do bean.</li>
+<li><strong>População de Propriedades:</strong> O Spring injeta dependências necessárias no bean.</li>
+<li><strong>Inicialização:</strong> O Spring chama métodos de inicialização, se definidos (por exemplo, o método anotado com <code>@PostConstruct</code>).</li>
+<li><strong>Uso:</strong> O bean está pronto para ser usado pela aplicação.</li>
+<li><strong>Destruição:</strong> Quando o bean não é mais necessário, o Spring chama métodos de destruição, se definidos (por exemplo, o método anotado com <code>@PreDestroy</code>).</li>
+</ol>
+<h3 id="exemplo-de-ciclo-de-vida-de-um-bean">Exemplo de Ciclo de Vida de um Bean</h3>
+<p><strong>Classe de Bean:</strong></p>
+<pre><code class="language-java">import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+@Component
+public class MyLifecycleBean {
+
+    @PostConstruct
+    public void init() {
+        System.out.println(&quot;Bean criado e inicializado!&quot;);
+    }
+
+    @PreDestroy
+    public void cleanup() {
+        System.out.println(&quot;Bean sendo destruído!&quot;);
+    }
+}
+</code></pre>
+<h3 id="uso-de-beans-na-aplicacao">Uso de Beans na Aplicação</h3>
+<p>Os beans podem ser injetados em outros componentes do Spring, como serviços e controladores, utilizando a injeção de dependência por meio da anotação <code>@Autowired</code>.</p>
+<p><strong>Exemplo de Injeção de Dependência:</strong></p>
+<pre><code class="language-java">import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class MyService {
+
+    @Autowired
+    private MyBean myBean;
+
+    public void performAction() {
+        myBean.doSomething();
+    }
+}
+</code></pre>
+<h2 id="como-o-spring-boot-nos-ajuda-com-as-abordagens-desejadas-para-o-projeto">Como o Spring Boot nos ajuda com as abordagens desejadas para o projeto</h2>
+<h3 id="principios-solid">Princípios SOLID</h3>
+<p>Os princípios SOLID são um conjunto de diretrizes que ajudam a criar software de forma mais clara e compreensível. Esses princípios incluem:</p>
+<ol>
+<li>
+<p><strong>S - Single Responsibility Principle (SRP):</strong> Uma classe deve ter apenas uma razão para mudar. No Spring Boot, isso é alcançado pela separação de responsabilidades em diferentes camadas (controladores, serviços, repositórios).</p>
+</li>
+<li>
+<p><strong>O - Open/Closed Principle (OCP):</strong> Entidades de software devem ser abertas para extensão, mas fechadas para modificação. Isso pode ser implementado usando interfaces e herança, permitindo que novos comportamentos sejam adicionados sem alterar o código existente.</p>
+</li>
+<li>
+<p><strong>L - Liskov Substitution Principle (LSP):</strong> Objetos de uma classe derivada devem poder substituir objetos da classe base sem alterar o comportamento desejado. O Spring Boot permite que você use interfaces e classes abstratas para garantir isso.</p>
+</li>
+<li>
+<p><strong>I - Interface Segregation Principle (ISP):</strong> Uma classe não deve ser forçada a implementar interfaces que não usa. O Spring Boot promove a criação de interfaces específicas que podem ser implementadas por diferentes classes.</p>
+</li>
+<li>
+<p><strong>D - Dependency Inversion Principle (DIP):</strong> Dependa de abstrações, não de classes concretas. O Spring Boot utiliza injeção de dependência, permitindo que você trabalhe com interfaces e abstrações em vez de implementações concretas.</p>
+</li>
+</ol>
+<h2 id="teoria-de-operacao-do-spring-boot">Teoria de Operação do Spring Boot</h2>
+<p>O Spring Boot opera com base no conceito de configuração automática e convenções sobre configurações. Quando uma aplicação Spring Boot é iniciada, o framework examina as dependências presentes no classpath e configura automaticamente os beans necessários.</p>
+<h3 id="ciclo-de-vida-da-aplicacao">Ciclo de Vida da Aplicação</h3>
+<ol>
+<li><strong>Inicialização:</strong> O Spring Boot inicializa o contexto da aplicação e carrega todos os beans definidos.</li>
+<li><strong>Configuração Automática:</strong> O Spring Boot aplica a configuração automática com base nas dependências encontradas, como a configuração de um banco de dados quando <code>spring-boot-starter-data-jpa</code> está presente.</li>
+<li><strong>Injeção de Dependência:</strong> A injeção de dependência é realizada, permitindo que os componentes colaborem entre si.</li>
+<li><strong>Execução da Aplicação:</strong> A aplicação começa a responder a requisições, utilizando os controladores e serviços definidos.</li>
+</ol>
+<h2 id="programacao-orientada-a-aspectos-aop">Programação Orientada a Aspectos (AOP)</h2>
+<h3 id="o-que-e-aop">O que é AOP?</h3>
+<p>A Programação Orientada a Aspectos (AOP) é uma técnica que permite modularizar preocupações transversais, como logging, segurança e gerenciamento de transações, separando-as da lógica de negócio principal.</p>
+<h3 id="como-o-spring-abraca-aop">Como o Spring Abraça AOP</h3>
+<p>O Spring Framework fornece suporte robusto para AOP, permitindo que você defina aspectos e aplique lógica de maneira declarativa.</p>
+<p><strong>Principais Conceitos:</strong></p>
+<ul>
+<li>
+<p><strong>Aspecto:</strong> Um módulo que contém preocupações transversais.</p>
+</li>
+<li>
+<p><strong>Join Point:</strong> Um ponto na execução da aplicação, como a chamada de um método.</p>
+</li>
+<li>
+<p><strong>Advice:</strong> A ação a ser executada em um Join Point.</p>
+</li>
+<li>
+<p><strong>Pointcut:</strong> Uma expressão que define onde o Advice deve ser aplicado.</p>
+</li>
+</ul>
+<h3 id="exemplo-de-aop-no-spring-boot">Exemplo de AOP no Spring Boot</h3>
+<p><strong>Definindo um Aspecto:</strong></p>
+<pre><code class="language-java">import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
+
+@Aspect
+@Component
+public class LoggingAspect {
+    @Before(&quot;execution(* com.example.service.*.*(..))&quot;) // Aplica antes da execução de qualquer método nos serviços
+    public void logBeforeMethod() {
+        System.out.println(&quot;Método chamado...&quot;);
+    }
+}
+</code></pre>
+<h3 id="uso-de-aop">Uso de AOP</h3>
+<p>Ao utilizar AOP, você pode facilmente adicionar logging, segurança ou outras funcionalidades sem modificar o código existente nas classes de serviço:</p>
+<pre><code class="language-java">@Service
+public class OrderServiceImpl implements OrderService {
+    public void placeOrder(Order order) {
+        // lógica de negócio
+        orderRepository.save(order);
+    }
+}
+</code></pre>
+<p>O <code>logBeforeMethod</code> será chamado automaticamente antes de qualquer método no pacote <code>com.example.service</code>, permitindo que você insira lógica de logging de maneira limpa e não intrusiva.</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../../assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="../../../assets/mkdocs_puml/interaction.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2990 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../node_backend/api_gateway/">
+      
+      
+        <link rel="next" href="feedbackresponseview/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>Python Backend Com FastAPI e Peewee - Next Gen 2025</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="../assets/mkdocs_puml/interaction.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-backend-com-fastapi-e-peewee" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Next Gen 2025" class="md-header__button md-logo" aria-label="Next Gen 2025" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Next Gen 2025
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python Backend Com FastAPI e Peewee
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Next Gen 2025" class="md-nav__button md-logo" aria-label="Next Gen 2025" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Next Gen 2025
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bem Vindo ao Bootcamp Next Gen 2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estrutura_bootcamp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estrutura do Bootcamp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Detalhamento das Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Conteúdo didático
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Conteúdo didático
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conte%C3%BAdo_did%C3%A1tico/SOLID/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Princípios SOLID
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Arquitetura
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Arquitetura
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conte%C3%BAdo_did%C3%A1tico/arquitetura/microservices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microservices: Abordagem no Projeto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conte%C3%BAdo_did%C3%A1tico/arquitetura/monorepo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Monorepo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_3" id="__nav_4_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DDD   Domain Driven Design
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            DDD   Domain Driven Design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conte%C3%BAdo_did%C3%A1tico/arquitetura/DDD_-_Domain_Driven_Design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    O que é DDD - Domain Driven Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conte%C3%BAdo_did%C3%A1tico/arquitetura/DDD_-_Domain_Driven_Design/contextos_delimitados/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    O que é Contexto Delimitado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_3_3" id="__nav_4_2_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exemplos Práticos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Exemplos Práticos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conte%C3%BAdo_did%C3%A1tico/arquitetura/DDD_-_Domain_Driven_Design/Exemplos_Pr%C3%A1ticos/ecommerce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E-Commerce
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ferramentas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ferramentas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conte%C3%BAdo_did%C3%A1tico/ferramentas/coder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conte%C3%BAdo_did%C3%A1tico/ferramentas/docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conte%C3%BAdo_did%C3%A1tico/ferramentas/maven/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maven
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conte%C3%BAdo_did%C3%A1tico/ferramentas/npm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NPM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conte%C3%BAdo_did%C3%A1tico/ferramentas/python-poetry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python Poetry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Frameworks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Frameworks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conte%C3%BAdo_did%C3%A1tico/frameworks/nextjs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Next.JS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conte%C3%BAdo_did%C3%A1tico/frameworks/react/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    React
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conte%C3%BAdo_did%C3%A1tico/frameworks/springboot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spring boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_4" id="__nav_4_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Microframeworks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Microframeworks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conte%C3%BAdo_did%C3%A1tico/frameworks/microframeworks/express/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Express JS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conte%C3%BAdo_did%C3%A1tico/frameworks/microframeworks/fastapi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FastAPI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Frontend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Frontend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frontend com NextJS e Material UI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Gateway
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Gateway
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gateway/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Api Gateway com Proxy Reverso e Upstream no NGINX
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Instalação ambiente
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Instalação ambiente
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instala%C3%A7%C3%A3o_ambiente/ubuntu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubuntu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instala%C3%A7%C3%A3o_ambiente/vscode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VSCode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instala%C3%A7%C3%A3o_ambiente/windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Java backend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Java backend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_backend/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projeto Monorepo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Libs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Libs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2_1" id="__nav_8_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Security
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Security
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_backend/libs/security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentação do Sistema de Segurança com JWT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Microservices
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Microservices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_backend/microservices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Detalhamentos das bibliotecas usadas no projeto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3_2" id="__nav_8_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Feedbackrequest
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Feedbackrequest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_backend/microservices/feedbackrequest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pedido de Feedback
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3_3" id="__nav_8_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Feedbackresponse
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Feedbackresponse
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_backend/microservices/feedbackresponse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Respostas de Feedback
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3_4" id="__nav_8_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Usermanagement
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Usermanagement
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_backend/microservices/usermanagement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestão de Usuários
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Node backend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Node backend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Api gateway
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            Api gateway
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node_backend/api_gateway/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Api Gateway implementado com Node e Express
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python backend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Python backend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Python Backend Com FastAPI e Peewee
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Python Backend Com FastAPI e Peewee
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#teoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teoria
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilidade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplo-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Uso
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-fastapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. FastAPI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. FastAPI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teoria_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teoria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilidade_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilidade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-uso_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Uso
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-peewee" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Peewee
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Peewee">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teoria_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teoria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilidade_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilidade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-uso_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Uso
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-psycopg2-binary" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. psycopg2-binary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. psycopg2-binary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teoria_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teoria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilidade_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilidade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-uso_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Uso
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-python-dotenv" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. python-dotenv
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. python-dotenv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teoria_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teoria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilidade_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilidade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-uso_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Uso
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-testes-com-pytest" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Testes com pytest
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Testes com pytest">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teoria_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teoria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilidade_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilidade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-uso_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Uso
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-aplicar-os-conceitos-de-arquitetura-com-essa-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como aplicar os conceitos de arquitetura com essa stack?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Como aplicar os conceitos de arquitetura com essa stack?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-domain-driven-design-ddd" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Domain-Driven Design (DDD)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Domain-Driven Design (DDD)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teoria_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teoria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-a-stack-ajuda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como a Stack Ajuda
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-test-driven-development-tdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Test-Driven Development (TDD)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Test-Driven Development (TDD)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teoria_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teoria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-a-stack-ajuda_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como a Stack Ajuda
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-solid" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. SOLID
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. SOLID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teoria_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teoria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-a-stack-ajuda_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como a Stack Ajuda
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Feedbackresponseview
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Feedbackresponseview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="feedbackresponseview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visualização de Respostas de Feedback
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#teoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teoria
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilidade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplo-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Uso
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-fastapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. FastAPI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. FastAPI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teoria_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teoria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilidade_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilidade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-uso_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Uso
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-peewee" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Peewee
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Peewee">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teoria_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teoria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilidade_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilidade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-uso_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Uso
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-psycopg2-binary" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. psycopg2-binary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. psycopg2-binary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teoria_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teoria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilidade_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilidade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-uso_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Uso
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-python-dotenv" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. python-dotenv
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. python-dotenv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teoria_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teoria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilidade_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilidade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-uso_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Uso
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-testes-com-pytest" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Testes com pytest
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Testes com pytest">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teoria_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teoria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilidade_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilidade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-uso_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Uso
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-aplicar-os-conceitos-de-arquitetura-com-essa-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como aplicar os conceitos de arquitetura com essa stack?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Como aplicar os conceitos de arquitetura com essa stack?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-domain-driven-design-ddd" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Domain-Driven Design (DDD)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Domain-Driven Design (DDD)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teoria_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teoria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-a-stack-ajuda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como a Stack Ajuda
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-test-driven-development-tdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Test-Driven Development (TDD)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Test-Driven Development (TDD)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teoria_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teoria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-a-stack-ajuda_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como a Stack Ajuda
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-solid" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. SOLID
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. SOLID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teoria_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teoria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-a-stack-ajuda_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como a Stack Ajuda
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="python-backend-com-fastapi-e-peewee">Python Backend Com FastAPI e Peewee</h1>
+<h4 id="teoria">Teoria</h4>
+<p>O projeto Python Backend é uma aplicação web construída com FastAPI, um framework moderno e de alto desempenho para construir APIs com Python 3. Ele utiliza Peewee como ORM (Object-Relational Mapping) para interagir com um banco de dados PostgreSQL, e dotenv para gerenciar variáveis de ambiente.</p>
+<h4 id="utilidade">Utilidade</h4>
+<ul>
+<li>
+<p><strong>FastAPI:</strong> Framework para construção de APIs RESTful de forma rápida e eficiente, com suporte a validação de dados e documentação automática.</p>
+</li>
+<li>
+<p><strong>Peewee:</strong> ORM leve e simples que facilita a interação com bancos de dados, permitindo manipulação de dados através de modelos.</p>
+</li>
+<li>
+<p><strong>psycopg2-binary:</strong> Driver para conectar aplicações Python ao PostgreSQL, permitindo executar consultas e manipular dados no banco.</p>
+</li>
+<li>
+<p><strong>python-dotenv:</strong> Carrega variáveis de ambiente a partir de um arquivo <code>.env</code>, facilitando a configuração de dados sensíveis como credenciais.</p>
+</li>
+</ul>
+<h4 id="exemplo-de-uso">Exemplo de Uso</h4>
+<p><strong>1.1. Estrutura do Projeto:</strong></p>
+<pre><code class="language-plaintext">/python-backend
+│
+├── app
+│   ├── __init__.py
+│   ├── main.py
+│   ├── models.py
+│   ├── repositories.py
+│   ├── services.py
+│   └── .env
+│
+├── tests
+│   └── test_app.py
+│
+├── Dockerfile
+├── docker-compose.yml
+└── pyproject.toml
+</code></pre>
+<h3 id="2-fastapi">2. FastAPI</h3>
+<h4 id="teoria_1">Teoria</h4>
+<p>FastAPI é um framework para a construção de APIs com Python, projetado para ser rápido e fácil de usar. Ele utiliza a tipagem do Python para fornecer validação automática de dados e documentação interativa.</p>
+<h4 id="utilidade_1">Utilidade</h4>
+<ul>
+<li>
+<p><strong>Desempenho Alto:</strong> Construído sobre Starlette e Pydantic, o FastAPI é capaz de lidar com várias requisições simultaneamente, tornando-o ideal para aplicações de alto desempenho.</p>
+</li>
+<li>
+<p><strong>Documentação Automática:</strong> Gera automaticamente uma documentação interativa da API em Swagger e ReDoc.</p>
+</li>
+<li>
+<p><strong>Validação de Dados:</strong> Utiliza tipos de dados do Python para validar automaticamente as entradas.</p>
+</li>
+</ul>
+<h4 id="exemplo-de-uso_1">Exemplo de Uso</h4>
+<pre><code class="language-python">from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get(&quot;/&quot;)
+def read_root():
+    return {&quot;Hello&quot;: &quot;World&quot;}
+</code></pre>
+<hr />
+<h3 id="3-peewee">3. Peewee</h3>
+<h4 id="teoria_2">Teoria</h4>
+<p>Peewee é um ORM (Object-Relational Mapping) leve e simples para Python. Ele fornece uma interface intuitiva para interagir com bancos de dados, permitindo que desenvolvedores manipulem dados como objetos Python.</p>
+<h4 id="utilidade_2">Utilidade</h4>
+<ul>
+<li>
+<p><strong>Facilidade de Uso:</strong> A sintaxe é simples e intuitiva, permitindo operações de banco de dados com menos código.</p>
+</li>
+<li>
+<p><strong>Suporte a Múltiplos Bancos de Dados:</strong> Funciona com SQLite, PostgreSQL e MySQL, entre outros.</p>
+</li>
+<li>
+<p><strong>Modelos de Dados:</strong> Permite a definição de modelos de dados de forma declarativa, facilitando a manipulação de registros.</p>
+</li>
+</ul>
+<h4 id="exemplo-de-uso_2">Exemplo de Uso</h4>
+<pre><code class="language-python">from peewee import Model, CharField, SqliteDatabase
+
+db = SqliteDatabase('my_database.db')
+
+class User(Model):
+    username = CharField()
+    email = CharField()
+
+    class Meta:
+        database = db
+
+db.connect()
+db.create_tables([User])
+</code></pre>
+<hr />
+<h3 id="4-psycopg2-binary">4. psycopg2-binary</h3>
+<h4 id="teoria_3">Teoria</h4>
+<p>psycopg2-binary é um adaptador PostgreSQL para Python. Ele permite que aplicações Python se conectem a um banco de dados PostgreSQL e executem operações SQL.</p>
+<h4 id="utilidade_3">Utilidade</h4>
+<ul>
+<li>
+<p><strong>Conexão com PostgreSQL:</strong> Facilita a conexão e execução de comandos SQL em bancos de dados PostgreSQL.</p>
+</li>
+<li>
+<p><strong>Suporte a Transações:</strong> Permite gerenciar transações de forma eficiente, garantindo a integridade dos dados.</p>
+</li>
+<li>
+<p><strong>Desempenho:</strong> É otimizado para desempenho e pode lidar com operações em massa de forma eficiente.</p>
+</li>
+</ul>
+<h4 id="exemplo-de-uso_3">Exemplo de Uso</h4>
+<pre><code class="language-python">import psycopg2
+
+conn = psycopg2.connect(&quot;dbname=mydatabase user=myuser password=mypassword&quot;)
+cur = conn.cursor()
+cur.execute(&quot;SELECT * FROM my_table;&quot;)
+rows = cur.fetchall()
+cur.close()
+conn.close()
+</code></pre>
+<hr />
+<h3 id="5-python-dotenv">5. python-dotenv</h3>
+<h4 id="teoria_4">Teoria</h4>
+<p>python-dotenv é uma biblioteca que carrega variáveis de ambiente a partir de um arquivo <code>.env</code>. É útil para gerenciar configurações sensíveis, como credenciais de banco de dados, sem expô-las no código.</p>
+<h4 id="utilidade_4">Utilidade</h4>
+<ul>
+<li>
+<p><strong>Gerenciamento de Configurações:</strong> Permite separar configurações sensíveis do código-fonte, facilitando a manutenção.</p>
+</li>
+<li>
+<p><strong>Facilidade de Uso:</strong> Carrega as variáveis de ambiente automaticamente, tornando-as acessíveis via <code>os.environ</code>.</p>
+</li>
+<li>
+<p><strong>Compatibilidade:</strong> Funciona bem com qualquer aplicação Python que precise de variáveis de ambiente.</p>
+</li>
+</ul>
+<h4 id="exemplo-de-uso_4">Exemplo de Uso</h4>
+<pre><code class="language-python">from dotenv import load_dotenv
+import os
+
+load_dotenv()
+database_url = os.getenv(&quot;DATABASE_URL&quot;)
+</code></pre>
+<hr />
+<h3 id="6-testes-com-pytest">6. Testes com pytest</h3>
+<h4 id="teoria_5">Teoria</h4>
+<p>pytest é um framework de testes para Python que facilita a escrita de testes simples e escaláveis. Ele suporta testes de unidade, funcionais e integração.</p>
+<h4 id="utilidade_5">Utilidade</h4>
+<ul>
+<li>
+<p><strong>Simplicidade:</strong> Sintaxe simples que permite escrever testes de forma rápida e intuitiva.</p>
+</li>
+<li>
+<p><strong>Plugins:</strong> Possui uma vasta gama de plugins que estendem suas funcionalidades.</p>
+</li>
+<li>
+<p><strong>Testes Assíncronos:</strong> Suporta testes assíncronos, permitindo testar código que utiliza asyncio.</p>
+</li>
+</ul>
+<h4 id="exemplo-de-uso_5">Exemplo de Uso</h4>
+<pre><code class="language-python">import pytest
+
+def test_example():
+    assert 1 + 1 == 2
+</code></pre>
+<hr />
+<h2 id="como-aplicar-os-conceitos-de-arquitetura-com-essa-stack">Como aplicar os conceitos de arquitetura com essa stack?</h2>
+<h3 id="1-domain-driven-design-ddd">1. Domain-Driven Design (DDD)</h3>
+<h4 id="teoria_6">Teoria</h4>
+<p>O DDD é uma abordagem de design de software que foca na colaboração entre especialistas de domínio e desenvolvedores, visando criar um modelo que represente com precisão as complexidades do negócio.</p>
+<h4 id="como-a-stack-ajuda">Como a Stack Ajuda</h4>
+<ul>
+<li><strong>Modelagem de Domínio com Peewee</strong>: O Peewee permite definir modelos de dados que refletem diretamente os conceitos do domínio. Cada tabela do banco de dados pode ser representada como uma classe de modelo, facilitando a manipulação e a lógica de negócios.</li>
+</ul>
+<p><strong>Exemplo de Modelagem:</strong></p>
+<pre><code class="language-python">from peewee import Model, CharField, TextField, ForeignKeyField, SqliteDatabase
+
+db = SqliteDatabase('feedback.db')
+
+class Feedback(Model):
+    content = TextField()
+
+    class Meta:
+        database = db
+
+class Question(Model):
+    text = CharField()
+    feedback = ForeignKeyField(Feedback, backref='questions')
+
+    class Meta:
+        database = db
+</code></pre>
+<ul>
+<li><strong>Separação de Preocupações</strong>: A estrutura do projeto (com pastas como <code>repositories</code>, <code>services</code>, etc.) ajuda a organizar a lógica de negócios separadamente dos detalhes de implementação. Isso é fundamental no DDD.</li>
+</ul>
+<p><strong>Exemplo de Repositório:</strong></p>
+<pre><code class="language-python">from .models import Feedback
+
+def create_feedback(content: str) -&gt; Feedback:
+    return Feedback.create(content=content)
+
+def get_feedback(feedback_id: int) -&gt; Feedback:
+    return Feedback.get_by_id(feedback_id)
+</code></pre>
+<h3 id="2-test-driven-development-tdd">2. Test-Driven Development (TDD)</h3>
+<h4 id="teoria_7">Teoria</h4>
+<p>O TDD é uma prática de desenvolvimento onde os testes são escritos antes do código de produção, garantindo que o código atenda aos requisitos definidos desde o início.</p>
+<h4 id="como-a-stack-ajuda_1">Como a Stack Ajuda</h4>
+<ul>
+<li>
+<p><strong>Uso do pytest</strong>: O pytest é uma ferramenta poderosa para escrever testes. Sua simplicidade e flexibilidade permitem que desenvolvedores escrevam testes de unidade e integração rapidamente, incentivando a prática de TDD.</p>
+</li>
+<li>
+<p><strong>Uso do TestClient</strong>: O <code>TestClient</code> do FastAPI permite simular requisições HTTP durante os testes, facilitando a verificação do comportamento da API. Isso ajuda a garantir que a lógica de negócios funcione conforme esperado.</p>
+</li>
+</ul>
+<p><strong>Exemplo de Teste com TestClient:</strong></p>
+<pre><code class="language-python">import pytest
+from fastapi.testclient import TestClient
+from app.main import app
+
+client = TestClient(app)
+
+def test_create_feedback():
+    response = client.post(&quot;/feedback/&quot;, json={&quot;content&quot;: &quot;Test feedback&quot;})
+    assert response.status_code == 200
+    assert response.json()[&quot;content&quot;] == &quot;Test feedback&quot;
+</code></pre>
+<ul>
+<li><strong>Ciclo Red-Green-Refactor</strong>: Com pytest e TestClient, você pode facilmente seguir o ciclo TDD (escrever um teste que falha, implementar o código para passar o teste e refatorar). Isso ajuda a garantir que o código esteja sempre coberto por testes.</li>
+</ul>
+<p><strong>Exemplo de Ciclo TDD:</strong></p>
+<ol>
+<li><strong>Escrever um teste que falha:</strong></li>
+</ol>
+<pre><code class="language-python">def test_get_feedback_not_found():
+    response = client.get(&quot;/feedback/999&quot;)  # ID que não existe
+    assert response.status_code == 404
+</code></pre>
+<ol>
+<li><strong>Implementar o código para passar o teste:</strong></li>
+</ol>
+<pre><code class="language-python">@app.get(&quot;/feedback/{feedback_id}&quot;)
+def get_feedback(feedback_id: int):
+    try:
+        return service_get_feedback(feedback_id)
+    except Feedback.DoesNotExist:
+        raise HTTPException(status_code=404, detail=&quot;Feedback not found&quot;)
+</code></pre>
+<ol>
+<li><strong>Refatorar o código se necessário.</strong></li>
+</ol>
+<h3 id="3-solid">3. SOLID</h3>
+<h4 id="teoria_8">Teoria</h4>
+<p>Os princípios SOLID são diretrizes para o design de software que visam tornar o código mais compreensível, flexível e manutenível.</p>
+<h4 id="como-a-stack-ajuda_2">Como a Stack Ajuda</h4>
+<ul>
+<li><strong>Single Responsibility Principle (SRP)</strong>: A estrutura do projeto, com diferentes pastas para <code>models</code>, <code>repositories</code> e <code>services</code>, promove a separação de responsabilidades.</li>
+</ul>
+<p><strong>Exemplo de SRP:</strong></p>
+<pre><code class="language-python"># models.py
+class Feedback(Model):
+    content = TextField()
+
+# repositories.py
+def create_feedback(content: str) -&gt; Feedback:
+    return Feedback.create(content=content)
+
+# services.py
+def service_create_feedback(content: str) -&gt; Feedback:
+    return create_feedback(content)
+</code></pre>
+<ul>
+<li><strong>Open/Closed Principle (OCP)</strong>: As classes de modelo e os serviços podem ser facilmente estendidos sem modificar o código existente.</li>
+</ul>
+<p><strong>Exemplo de OCP:</strong></p>
+<pre><code class="language-python"># Adicionando um novo método no repositório sem modificar o existente
+def get_all_feedback() -&gt; List[Feedback]:
+    return list(Feedback.select())
+</code></pre>
+<ul>
+<li><strong>Liskov Substitution Principle (LSP)</strong>: Ao usar interfaces ou classes base quando necessário, você pode garantir que subclasses possam ser usadas como substitutas de suas classes base.</li>
+</ul>
+<p><strong>Exemplo de LSP:</strong></p>
+<pre><code class="language-python">class BaseRepository:
+    def create(self, data):
+        pass
+
+class FeedbackRepository(BaseRepository):
+    def create(self, content: str) -&gt; Feedback:
+        return Feedback.create(content=content)
+</code></pre>
+<ul>
+<li><strong>Interface Segregation Principle (ISP)</strong>: A estrutura modular do projeto permite que você crie interfaces pequenas e específicas.</li>
+</ul>
+<p><strong>Exemplo de ISP:</strong></p>
+<pre><code class="language-python">class FeedbackServiceInterface:
+    def create_feedback(self, content: str) -&gt; Feedback:
+        pass
+
+class FeedbackService(FeedbackServiceInterface):
+    def create_feedback(self, content: str) -&gt; Feedback:
+        return create_feedback(content)
+</code></pre>
+<ul>
+<li><strong>Dependency Inversion Principle (DIP)</strong>: Manter a lógica de negócios separada da implementação concreta, permitindo fácil troca de implementações.</li>
+</ul>
+<p><strong>Exemplo de DIP:</strong></p>
+<pre><code class="language-python">class FeedbackService:
+    def __init__(self, repository: FeedbackRepository):
+        self.repository = repository
+
+    def create_feedback(self, content: str) -&gt; Feedback:
+        return self.repository.create(content)
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="../assets/mkdocs_puml/interaction.js"></script>
+      
+    
+  </body>
+</html>
